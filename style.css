@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Merriweather:wght@700&display=swap');
+
+:root {
+  --paleGreen: #F9FCF2;
+  --lightGreen: #8FC332;
+  --mediumGreen: #0A4B3A;
+  --darkGreen: #094434;
+  --gray: #5F686D;
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFFFFF;
+}
+
+#main_layout {
+  color: var(--gray);
+  display: grid;
+  gap: 3.5rem;
+  max-width: 100vw;
+}
+
+h1, h2, h3 {
+  font-family: 'Merriweather', serif;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.23rem;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 0.76rem;
+  line-height: 1.2;
+}
+
+#logo {
+  scale: 0.9;
+}
+
+header {
+  background: linear-gradient(135deg, rgba(13,52,43,1) 20%, rgba(13,52,43,0));
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.5rem;
+  padding: 1rem 4.5% 4rem;
+  position: relative;
+  height: 500px;
+}
+
+header > .top-header {
+  font-size: 0.9em;
+  width: min(100%, 100rem);
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+header > .top-header > nav > ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  gap: 2rem;
+}
+
+header > .top-header  > nav > ul > li > a {
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+header > .top-header > nav > ul  > li > a:is(.active, :hover) {
+  color: var(--lightGreen);
+  border-bottom: solid 2px var(--lightGreen);
+}
+
+header > .greeting {
+  width: min(30rem, 100%);
+}
+
+header > .greeting > * {
+  margin-block-end: 1em;
+}
+
+header > .greeting  > h1 {
+  color: var(--lightGreen);
+}
+
+header > .greeting > p {
+  color: white;
+}
+
+.Donasi-button {
+  width: fit-content;
+  border-radius: 3rem;
+  background-color: var(--lightGreen);
+}
+
+.Donasi-button > a {
+  color: var(--darkGreen);
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.Donasi-button:hover {
+  outline: solid 2px var(--mediumGreen);
+  outline-offset: -3px;
+  border-radius: 3rem;
+  box-shadow: 2px 2px 5px var(--lightGreen);
+  animation: click_anim 0.25s;
+}
+
+@keyframes click_anim {
+  from {
+    transform: scale(0.9);
+  }
+  
+  to {
+    transform: scale(1);
+  }
+}
+
+.bg-masjid {
+  position: absolute;
+  width: 100vw;
+  height: inherit;
+  object-fit: cover;
+  inset: 0;
+  z-index: -1;
+}
+
+/* SECTION 1 */
+.section-1 {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  padding: 8rem 4.5%;
+}
+
+.section-1 div:first-child {
+  align-self: center;
+}
+
+:is(.section-1, .section-3, .section-4) > div:first-child h2 {
+  color: var(--darkGreen);
+}
+
+.section-1 .address address {
+  color: var(--gray);
+  font-style: normal;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85em;
+}
+
+.section-1 .time-cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.section-1 .time-cards article {
+  background-color: var(--paleGreen);
+  border-radius: 8px;
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  aspect-ratio: 1/2;
+}
+
+.section-1 .time-cards article div:nth-child(2) {
+  font-size: 0.8em;
+}
+
+.section-1 .time-cards article time {
+  font-weight: 900;
+}
+
+/* SECTION 2 */
+.section-2 {
+  color: white;
+  background-color: var(--darkGreen);
+  max-height: 600px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+}
+
+.section-2 .laporan-keuangan {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1.5rem;
+}
+
+.section-2 .laporan-keuangan h2 {
+  color: var(--lightGreen);
+}
+
+.section-2 .laporan-keuangan p span.label,
+.section-2 .infaq-cards article div span.label {
+  font-size: 0.85em;
+}
+
+.section-2 .laporan-keuangan p span.price, 
+.section-2 .infaq-cards article div span.price {
+  font-weight: 900;
+}
+
+.section-2 .infaq-cards {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-2 > .infaq-cards > article {
+  color: var(--gray);
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  width: 12rem;
+}
+
+.section-2  > .infaq-cards > article > div > span.price {
+  color: var(--darkGreen);
+}
+
+.section-2 > .infaq-cards > article > div:nth-child(2) > a {
+  color: var(--mediumGreen);
+  text-decoration: none;
+  font-size: 0.6em;
+}
+
+/* SECTION 3 */
+.section-3 {
+  background-color: var(--paleGreen);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+  padding: 8rem 3rem;
+}
+
+.section-3 > div:first-child {
+  align-self: center;
+}
+
+.section-3 > .jadwal-kegiatan-nav > nav > ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.section-3 .jadwal-kegiatan-nav nav ul li a {
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 0.76rem;
+  font-weight: 900;
+  padding: 0.25rem;
+}
+
+.section-3 .jadwal-kegiatan-nav nav ul li a:is(.active, :hover) {
+  color: var(--mediumGreen);
+  border-bottom: solid 1px var(--mediumGreen);
+}
+
+.section-3 .ustad-cards {
+  width: min(90%, 75rem);
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1.5rem;
+  place-items: center;
+}
+
+.section-3 > .ustad-cards > article {
+  color: var(--gray);
+  background-color: #FFFFFF;
+  max-width: 288px;
+  aspect-ratio: 72/59;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  row-gap: 0.25rem;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.section-3 > .ustad-cards > article > .ustadz-name {
+  color: var(--darkGreen);
+  text-align: center;
+  text-wrap: pretty;
+  font-size: 0.95em;
+  font-family: 'Merriweather', serif;
+}
+
+.section-3 .ustad-cards article > *:not(.ustadz-name) {
+  font-size: 0.85em;
+}
+
+.section-3 .ustad-cards article > *:not(hr) {
+  text-align: center;
+}
+
+.section-3 > .ustad-cards > article > hr {
+  height: .5px;
+  background-color: #808080;
+  border: none;
+}
+
+.section-3 .ustad-cards article div:nth-last-child(2) {
+  font-weight: 900;
+}
+
+:is(.section-4, .section-5) > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.section-4 > div.content {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid: 1fr / repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+  header nav {
+    display: none;
+  }
+}
+
+.section-4 > .judul > h2 {
+
+}
+
+
+.section-4 {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-5 > div.content {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-4 > div.judul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-4 > div.judul > .sub-judul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-4 > div.judul > .sub-judul img {
+  scale: 0.75;
+}
+
+.section-4  .more-link a {
+  color: var(--mediumGreen);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.section-4 .content {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.section-4 .content .video-card .thumbnail img {
+  scale: 0.75;
+}
+
+.section-5 > div.judul > .sub-judul img {
+  scale: 0.75;
+}
+
+.section-5  .more-link a {
+  color: var(--mediumGreen);
+  text-decoration: none;
+  font-size: 1rem;
+}
