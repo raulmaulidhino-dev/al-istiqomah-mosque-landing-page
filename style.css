@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Merriweather:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Merriweather:wght@700&display=swap");
 
 :root {
-  --paleGreen: #F9FCF2;
-  --lightGreen: #8FC332;
-  --mediumGreen: #0A4B3A;
+  --paleGreen: #f9fcf2;
+  --lightGreen: #8fc332;
+  --mediumGreen: #0a4b3a;
   --darkGreen: #094434;
-  --gray: #5F686D;
+  --gray: #5f686d;
   font-size: 16px;
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 *,
@@ -22,18 +22,22 @@
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
+  transition: overflow 0.3s ease-in-out; /* For smooth scroll lock */
 }
 
 #main_layout {
   color: var(--gray);
   display: grid;
-  gap: 3.5rem;
+  gap: 0; /* Adjusted, sections will handle their own spacing */
   max-width: 100vw;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-h1, h2, h3 {
-  font-family: 'Merriweather', serif;
+h1,
+h2,
+h3 {
+  font-family: "Merriweather", serif;
 }
 
 h1 {
@@ -47,22 +51,27 @@ h2 {
 }
 
 h3 {
-  font-size: 0.76rem;
+  font-size: 0.76rem; /* Consider increasing for better readability if needed */
   line-height: 1.2;
 }
 
 #logo {
   scale: 0.9;
+  z-index: 10000; /* Ensure logo is above mobile nav background */
 }
 
 header {
-  background: linear-gradient(135deg, rgba(13,52,43,1) 20%, rgba(13,52,43,0));
+  background: linear-gradient(
+    135deg,
+    rgba(13, 52, 43, 1) 20%,
+    rgba(13, 52, 43, 0)
+  );
   display: flex;
   flex-direction: column;
   row-gap: 3.5rem;
   padding: 1rem 4.5% 4rem;
   position: relative;
-  height: 500px;
+  min-height: 500px; /* Use min-height to ensure bg image visibility */
 }
 
 header > .top-header {
@@ -74,25 +83,32 @@ header > .top-header {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
+  position: relative; /* For z-index context if needed */
 }
 
-header > .top-header > nav > ul {
+header > .top-header > nav#primary-navigation > ul {
   display: flex;
   justify-content: space-between;
   list-style: none;
   gap: 2rem;
 }
 
-header > .top-header  > nav > ul > li > a {
-  color: #FFFFFF;
+header > .top-header > nav#primary-navigation > ul > li > a {
+  color: #ffffff;
   text-decoration: none;
   padding: 0.5rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-header > .top-header > nav > ul  > li > a:is(.active, :hover) {
+header > .top-header > nav#primary-navigation > ul > li > a:is(.active, :hover) {
   color: var(--lightGreen);
   border-bottom: solid 2px var(--lightGreen);
 }
+
+.mobile-donasi-button-item {
+    display: none; /* Hidden on desktop */
+}
+
 
 header > .greeting {
   width: min(30rem, 100%);
@@ -102,7 +118,7 @@ header > .greeting > * {
   margin-block-end: 1em;
 }
 
-header > .greeting  > h1 {
+header > .greeting > h1 {
   color: var(--lightGreen);
 }
 
@@ -136,7 +152,6 @@ header > .greeting > p {
   from {
     transform: scale(0.9);
   }
-  
   to {
     transform: scale(1);
   }
@@ -144,26 +159,37 @@ header > .greeting > p {
 
 .bg-masjid {
   position: absolute;
-  width: 100vw;
-  height: inherit;
+  width: 100%; /* Changed from 100vw to 100% for better containment */
+  height: 100%; /* Changed from inherit to 100% */
   object-fit: cover;
   inset: 0;
   z-index: -1;
 }
+
+/* SECTION STYLES */
+main > section { /* Add default vertical spacing for sections */
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+main > section:last-of-type { /* No bottom padding for the last section before footer */
+    padding-bottom: 0;
+}
+
 
 /* SECTION 1 */
 .section-1 {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
-  padding: 8rem 4.5%;
+  padding-left: 4.5%; /* Keep horizontal padding consistent */
+  padding-right: 4.5%;
 }
 
 .section-1 div:first-child {
   align-self: center;
 }
 
-:is(.section-1, .section-3, .section-4) > div:first-child h2 {
+:is(.section-1, .section-3, .section-4, .section-5) > div:first-child h2 {
   color: var(--darkGreen);
 }
 
@@ -176,13 +202,14 @@ header > .greeting > p {
   align-items: center;
   gap: 1rem;
   font-size: 0.85em;
+  text-align: center;
 }
 
 .section-1 .time-cards {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
+  align-items: stretch; /* Make cards same height if content varies */
   gap: 1.5rem;
 }
 
@@ -195,10 +222,12 @@ header > .greeting > p {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  aspect-ratio: 1/2;
+  width: 120px; /* Give a base width */
+  text-align: center;
+  /* aspect-ratio: 1/2; Removed to allow content to define height better */
 }
 
-.section-1 .time-cards article div:nth-child(2) {
+.section-1 .time-cards article div:nth-child(2) { /* For "Imsyak", "Shubuh" etc. */
   font-size: 0.8em;
 }
 
@@ -210,19 +239,19 @@ header > .greeting > p {
 .section-2 {
   color: white;
   background-color: var(--darkGreen);
-  max-height: 600px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  padding: 4rem 2rem;
+  padding: 4rem 2rem; /* This padding will be overridden by main > section for top/bottom */
 }
 
 .section-2 .laporan-keuangan {
   display: flex;
   flex-flow: column wrap;
   gap: 1.5rem;
+  text-align: center; /* Center text for better mobile appearance */
 }
 
 .section-2 .laporan-keuangan h2 {
@@ -234,16 +263,17 @@ header > .greeting > p {
   font-size: 0.85em;
 }
 
-.section-2 .laporan-keuangan p span.price, 
+.section-2 .laporan-keuangan p span.price,
 .section-2 .infaq-cards article div span.price {
   font-weight: 900;
+  font-size: 1.5rem; /* Make price stand out */
 }
 
 .section-2 .infaq-cards {
   display: flex;
   flex-flow: row wrap;
   gap: 1rem;
-  align-items: center;
+  align-items: stretch; /* Equal height cards */
   justify-content: center;
 }
 
@@ -251,18 +281,24 @@ header > .greeting > p {
   color: var(--gray);
   background-color: white;
   border-radius: 8px;
-  padding: 1rem 1.25rem;
-  width: 12rem;
+  padding: 1.5rem 1.25rem; /* Increased padding */
+  width: 15rem; /* Increased width */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.section-2  > .infaq-cards > article > div > span.price {
+.section-2 > .infaq-cards > article > div > span.price {
   color: var(--darkGreen);
 }
 
 .section-2 > .infaq-cards > article > div:nth-child(2) > a {
   color: var(--mediumGreen);
   text-decoration: none;
-  font-size: 0.6em;
+  font-size: 0.8em; /* Increased size */
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 1rem;
 }
 
 /* SECTION 3 */
@@ -271,7 +307,8 @@ header > .greeting > p {
   display: flex;
   flex-flow: column nowrap;
   gap: 2rem;
-  padding: 8rem 3rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .section-3 > div:first-child {
@@ -283,20 +320,23 @@ header > .greeting > p {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.5rem 1rem; /* row and column gap */
   list-style: none;
 }
 
 .section-3 .jadwal-kegiatan-nav nav ul li a {
   color: var(--gray);
   text-decoration: none;
-  font-size: 0.76rem;
+  font-size: 0.85rem; /* Slightly increased */
   font-weight: 900;
-  padding: 0.25rem;
+  padding: 0.5rem 0.75rem; /* Added padding for better touch */
+  border-radius: 4px;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .section-3 .jadwal-kegiatan-nav nav ul li a:is(.active, :hover) {
   color: var(--mediumGreen);
+  background-color: rgba(143, 195, 50, 0.1); /* Light green tint */
   border-bottom: solid 1px var(--mediumGreen);
 }
 
@@ -305,34 +345,36 @@ header > .greeting > p {
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Increased minmax */
   grid-gap: 1.5rem;
-  place-items: center;
+  place-items: stretch; /* Make cards of same height in a row */
 }
 
 .section-3 > .ustad-cards > article {
   color: var(--gray);
-  background-color: #FFFFFF;
-  max-width: 288px;
-  aspect-ratio: 72/59;
+  background-color: #ffffff;
+  max-width: 300px; /* Max width per card */
+  /* aspect-ratio: 72/59; Removed for flexible height */
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  row-gap: 0.25rem;
+  justify-content: space-between; /* Better content distribution */
+  row-gap: 0.5rem; /* Increased gap */
   border-radius: 8px;
-  padding: 1rem 1.25rem;
+  padding: 1.5rem 1.25rem; /* Increased padding */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Subtle shadow */
 }
 
 .section-3 > .ustad-cards > article > .ustadz-name {
   color: var(--darkGreen);
   text-align: center;
   text-wrap: pretty;
-  font-size: 0.95em;
-  font-family: 'Merriweather', serif;
+  font-size: 1rem; /* Increased size */
+  font-family: "Merriweather", serif;
+  min-height: 3em; /* Ensure space for longer names */
 }
 
 .section-3 .ustad-cards article > *:not(.ustadz-name) {
-  font-size: 0.85em;
+  font-size: 0.9em; /* Increased size */
 }
 
 .section-3 .ustad-cards article > *:not(hr) {
@@ -340,90 +382,465 @@ header > .greeting > p {
 }
 
 .section-3 > .ustad-cards > article > hr {
-  height: .5px;
-  background-color: #808080;
+  height: 1px; /* Thicker hr */
+  background-color: #dddddd; /* Lighter hr */
   border: none;
+  margin: 0.5rem 0;
 }
 
-.section-3 .ustad-cards article div:nth-last-child(2) {
-  font-weight: 900;
+.section-3 .ustad-cards article div:nth-last-child(2) { /* "Tema :" */
+  font-weight: normal;
 }
-
-:is(.section-4, .section-5) > div:first-child {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.section-4 > div.content {
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  display: grid;
-  grid: 1fr / repeat(3, 1fr);
-}
-
-@media (max-width: 1024px) {
-  header nav {
-    display: none;
-  }
-}
-
-.section-4 > .judul > h2 {
-
+.section-3 .ustad-cards article div:last-child { /* Actual theme */
+  font-weight: bold;
+  color: var(--mediumGreen);
 }
 
 
-.section-4 {
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+/* SECTION 4 & 5 */
+.section-4,
+.section-5 {
+  background-color: var(--paleGreen); /* Default for section-5, section-4 has its own */
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.section-4 { /* Keep section-4 white if intended, or remove if paleGreen is okay */
+  background-color: #ffffff;
 }
 
-.section-5 > div.content {
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-.section-4 > div.judul {
+.section-4 .judul,
+.section-5 .judul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem; /* Add space below title block */
 }
 
-.section-4 > div.judul > .sub-judul {
+.section-4 .judul .sub-judul,
+.section-5 .judul .sub-judul {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.section-4 > div.judul > .sub-judul img {
+.section-4 .judul .sub-judul img,
+.section-5 .judul .sub-judul img {
   scale: 0.75;
 }
 
-.section-4  .more-link a {
+.section-4 .more-link a,
+.section-5 .more-link a {
   color: var(--mediumGreen);
   text-decoration: none;
   font-size: 1rem;
+  font-weight: bold;
 }
 
-.section-4 .content {
+.section-4 .content,
+.section-5 .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax */
+  gap: 2rem; /* Increased gap */
+}
+
+.section-4 article,
+.section-5 article {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+
+.section-4 article .thumbnail img,
+.section-5 article .thumbnail img {
+  width: 100%;
+  border-radius: 8px;
+  aspect-ratio: 16/9; /* Maintain aspect ratio for thumbnails */
+  object-fit: cover;
+}
+
+.section-4 article .title,
+.section-5 article .title {
+  font-size: 1.1rem; /* Slightly larger title */
+  color: var(--darkGreen);
+  font-family: "Merriweather", serif;
+  line-height: 1.3;
+  min-height: 3.9em; /* Allow for 3 lines of text roughly */
+}
+
+.section-4 article .description,
+.section-5 article .description {
+  font-size: 0.9em; /* Slightly larger description */
+  color: var(--gray);
+  line-height: 1.5;
+  flex-grow: 1; /* Allow description to take available space */
+}
+
+.section-4 article .btn,
+.section-5 article .btn {
+  align-self: flex-start;
+  background-color: var(--lightGreen);
+  color: var(--darkGreen);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem; /* Increased padding */
+  border-radius: 3rem;
+  font-weight: 700;
+  margin-top: auto; /* Push button to bottom if card heights vary */
+}
+
+.section-4 article .btn:hover,
+.section-5 article .btn:hover {
+  outline: solid 2px var(--mediumGreen);
+  outline-offset: -3px;
+  border-radius: 3rem;
+  box-shadow: 2px 2px 5px var(--lightGreen);
+  animation: click_anim 0.25s;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--darkGreen);
+  color: white;
+  padding: 3rem 2rem;
+}
+
+footer .container {
   display: flex;
   flex-wrap: wrap;
-  
+  gap: 2rem;
+  justify-content: space-between; /* Better distribution for 3 columns */
+  max-width: 1200px; /* Max width for footer content */
+  margin: 0 auto; /* Center footer content */
 }
 
-.section-4 .content .video-card .thumbnail img {
-  scale: 0.75;
+footer .footer-section {
+  flex: 1;
+  min-width: 200px;
+  padding: 0 1rem; /* Add some padding to footer sections */
 }
 
-.section-5 > div.judul > .sub-judul img {
-  scale: 0.75;
+footer .footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--lightGreen); /* Heading color for footer */
 }
 
-.section-5  .more-link a {
-  color: var(--mediumGreen);
+footer .footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer .footer-section ul li {
+  margin-bottom: 0.75rem; /* Increased spacing */
+}
+
+footer .footer-section ul li a {
+  color: white;
   text-decoration: none;
-  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+footer .footer-section ul li a:hover {
+  color: var(--lightGreen);
+  text-decoration: underline;
+}
+
+footer .footer-section .social-media {
+  display: flex;
+  gap: 1rem;
+}
+
+footer .footer-section .social-media li {
+  list-style: none;
+}
+
+footer .footer-section .social-media li a img {
+  width: 28px; /* Slightly larger icons */
+  height: 28px;
+  transition: opacity 0.2s ease;
+}
+footer .footer-section .social-media li a:hover img {
+  opacity: 0.8;
+}
+
+/* HAMBURGER MENU STYLES */
+.mobile-nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 0.5em;
+  cursor: pointer;
+  z-index: 10001; /* Above nav menu */
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.hamburger-icon {
+  display: block;
+  position: relative;
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.hamburger-icon::before {
+  top: -8px;
+}
+
+.hamburger-icon::after {
+  bottom: -8px;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .hamburger-icon {
+  background-color: transparent;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .hamburger-icon::before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .hamburger-icon::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* === RESPONSIVE MOBILE === */
+@media (max-width: 768px) {
+  :root {
+    font-size: 15px; /* Adjust base font size for tablet/mobile */
+  }
+
+  header {
+    padding: 1.5rem 1.5rem 3rem;
+    min-height: auto; /* Header height will be content-driven */
+    row-gap: 2rem; /* Reduce gap */
+  }
+
+  .top-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #logo {
+    scale: 0.8;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  header > .top-header > nav#primary-navigation {
+    display: block; /* Keep it block, visibility controlled by transform and class */
+    position: fixed; /* Fixed position for full screen overlay */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background: var(--darkGreen);
+    padding: 6rem 2rem 2rem; /* Padding for content inside */
+    z-index: 10000; /* Below toggle button but above other content */
+    transform: translateX(-100%);
+    transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1); /* Smoother transition */
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+  }
+
+  header > .top-header > nav#primary-navigation.nav-active {
+    transform: translateX(0);
+  }
+
+  header > .top-header > nav#primary-navigation ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; /* Space between nav items */
+    width: 100%;
+  }
+
+  header > .top-header > nav#primary-navigation ul li a {
+    font-size: 1.5rem; /* Larger font for mobile nav items */
+    padding: 0.75rem 1rem;
+    border-bottom: none; /* Remove border for mobile nav items */
+  }
+  header > .top-header > nav#primary-navigation ul li a:is(.active, :hover) {
+    color: var(--lightGreen);
+    border-bottom: none;
+  }
+
+  .mobile-donasi-button-item {
+    display: block; /* Show Donasi button in mobile nav */
+    margin-top: 1rem;
+  }
+  .Donasi-button-mobile-nav {
+    background-color: var(--lightGreen);
+    color: var(--darkGreen) !important; /* Ensure text color */
+    padding: 0.75rem 2rem !important;
+    border-radius: 3rem;
+    font-weight: 700;
+    font-size: 1.2rem !important;
+  }
+
+
+  .header-donasi-button { /* The original Donasi button in top-header */
+    display: none;
+  }
+
+  header > .greeting {
+    text-align: center;
+    margin-top: 1rem; /* Adjust spacing */
+    width: 100%; /* Full width */
+  }
+  header > .greeting > h1 {
+    font-size: 1.8rem;
+  }
+  header > .greeting > p {
+    font-size: 0.95rem;
+  }
+  header > .greeting > .Donasi-button {
+    margin: 1.5rem auto 0; /* Center and space */
+  }
+
+  main > section,
+  .section-1,
+  .section-2,
+  .section-3,
+  .section-4,
+  .section-5 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+
+  .section-1 .time-cards {
+    gap: 1rem;
+  }
+  .section-1 .time-cards article {
+    width: calc(33.333% - 1rem); /* Three cards per row */
+    padding: 1.5rem 0.5rem; /* Adjust padding */
+    font-size: 0.9em;
+  }
+
+  .section-2 {
+    gap: 1.5rem;
+  }
+  .section-2 .laporan-keuangan p span.price {
+    font-size: 1.3rem;
+  }
+  .section-2 .infaq-cards article {
+    width: calc(50% - 0.5rem); /* Two cards per row */
+  }
+
+
+  .section-3 .jadwal-kegiatan-nav nav ul {
+    gap: 0.5rem;
+  }
+  .section-3 .jadwal-kegiatan-nav nav ul li a {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+  }
+  .section-3 .ustad-cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .section-4 .judul,
+  .section-5 .judul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .section-4 .content,
+  .section-5 .content {
+    grid-template-columns: 1fr; /* Stack cards */
+    gap: 1.5rem;
+  }
+  .section-4 article .title,
+  .section-5 article .title {
+    min-height: auto; /* Let title height be natural */
+  }
+
+  .section-4 article .btn,
+  .section-5 article .btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem 1rem;
+  }
+
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  footer .footer-section {
+    min-width: 100%;
+    padding: 0;
+  }
+  footer .footer-section .social-media {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 14px;
+  }
+  header > .greeting > h1 {
+    font-size: 1.6rem;
+  }
+  header > .greeting > p {
+    font-size: 0.9rem;
+  }
+
+  main > section,
+  .section-1,
+  .section-2,
+  .section-3,
+  .section-4,
+  .section-5 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .section-1 .time-cards article {
+    width: calc(50% - 0.5rem); /* Two cards per row for very small screens */
+    font-size: 0.85em;
+  }
+
+  .section-2 .infaq-cards article {
+    width: 100%; /* Stack infaq cards */
+  }
+  .section-3 .ustad-cards {
+    grid-template-columns: 1fr; /* Stack ustad cards */
+  }
 }
