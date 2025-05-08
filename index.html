@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Media Da'wah of Al Istiqomah Mosque Purbalingga - Spread the Light of Knowledge, Calm the Soul" />
+    <meta name="theme-color" content="#094434" />
     <!-- Tailwind Import -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
@@ -16,36 +18,38 @@
       }
 
     </style>
+    <!-- AOS Import -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.css">
     <link rel="stylesheet" href="style.css" />
-    <title>Lentera Istiqomah</title>
+    <title>Al Istiqomah Mosque | Lentera Istiqomah</title>
   </head>
   <body class="bg-white">
     <div class="overflow-x-hidden">
       <!-- Header -->
-      <header class="bg-[linear-gradient(135deg,_rgba(13,52,43,1)_20%,_rgba(13,52,43,0))] flex flex-col gap-y-14 pt-6 px-6 pb-16 relative min-h-[500px] items-start">
+      <header class="bg-[linear-gradient(135deg,_rgba(13,52,43,1)_20%,_rgba(13,52,43,0))] flex flex-col gap-y-14 min-h-[500px] pt-6 pb-16 px-6 relative items-start">
         <div class="flex self-stretch items-center justify-between gap-8">
-          <img src="img/logo.png" alt="Al Istiqomah Mosque Logo" />
-          <button class="mobile-nav-toggle text-3xl" aria-controls="primary-navigation" aria-expanded="false" onclick="toggleMobileNav()">
+          <img data-aos="zoom-in" src="img/logo.png" alt="Al Istiqomah Mosque Logo" />
+          <button data-aos="zoom-in" class="mobile-nav-toggle text-3xl z-[999]" aria-controls="primary-navigation" aria-expanded="false" onclick="toggleMobileNav()">
             <span class="sr-only">Menu</span>
-            <span class="hamburger-icon text-white relative sm:hidden z-[1000]">☰</span>
+            <span class="hamburger-icon text-white relative sm:hidden">☰</span>
           </button>
-          <nav id="primary-navigation" class="bg-darkGreen sm:bg-transparent fixed sm:relative inset-0 transition-all duration-500 ease-in-out grow pt-28 sm:p-0 sm:translate-x-0 -translate-x-full z-[999]">
+          <nav id="primary-navigation" class="bg-darkGreen fixed inset-0 transition-all duration-500 ease-in-out grow pt-28 sm:bg-transparent sm:relative sm:p-0 sm:translate-x-0 -translate-x-full z-[99]">
             <ul class="flex flex-col sm:flex-row justify-center sm:gap-8 list-none">
-              <li><a href="#" class="text-white text-xl sm:text-base block px-10 py-6 sm:p-0 hover:text-mediumGreen hover:bg-paleGreen active">Profile</a></li>
-              <li><a href="#" class="text-white text-xl sm:text-base block px-10 py-6 sm:p-0 hover:text-mediumGreen hover:bg-paleGreen">Finance</a></li>
-              <li><a href="#" class="text-white text-xl sm:text-base block px-10 py-6 sm:p-0 hover:text-mediumGreen hover:bg-paleGreen">Activities</a></li>
-              <li><a href="#" class="text-white text-xl sm:text-base block px-10 py-6 sm:p-0 hover:text-mediumGreen hover:bg-paleGreen">Services</a></li>
-              <li><a href="#" class="text-white text-xl sm:text-base block px-10 py-6 sm:p-0 hover:text-mediumGreen hover:bg-paleGreen">Store</a></li>
+              <li data-aos="fade-down"><a href="#" class="block px-10 py-6 text-white text-xl sm:p-0 sm:text-base hover:bg-paleGreen hover:text-mediumGreen sm:hover:bg-transparent sm:hover:text-white">Profile</a></li>
+              <li data-aos="fade-down"><a href="#" class="block px-10 py-6 text-white text-xl sm:p-0 sm:text-base hover:bg-paleGreen hover:text-mediumGreen sm:hover:bg-transparent sm:hover:text-white">Finance</a></li>
+              <li data-aos="fade-down"><a href="#" class="block px-10 py-6 text-white text-xl sm:p-0 sm:text-base hover:bg-paleGreen hover:text-mediumGreen sm:hover:bg-transparent sm:hover:text-white">Activities</a></li>
+              <li data-aos="fade-down"><a href="#" class="block px-10 py-6 text-white text-xl sm:p-0 sm:text-base hover:bg-paleGreen hover:text-mediumGreen sm:hover:bg-transparent sm:hover:text-white">Services</a></li>
+              <li data-aos="fade-down"><a href="#" class="block px-10 py-6 text-white text-xl sm:p-0 sm:text-base hover:bg-paleGreen hover:text-mediumGreen sm:hover:bg-transparent sm:hover:text-white">Store</a></li>
             </ul>
           </nav>
         </div>
-        <div class="text-center sm:text-left bg-transparent/40 border-2 border-white/20 backdrop-blur-lg rounded-xl p-6">
-          <h1 class="text-lightGreen mb-[1em]">Welcome to the Al Istiqomah Mosque Website</h1>
-          <p class="text-white mb-[1em]">
+        <div data-aos="zoom-in" class="bg-transparent/40 border-2 border-white/20 backdrop-blur-lg rounded-xl p-6 text-center sm:text-left">
+          <h1 class="mb-[1em] text-lightGreen">Welcome to Al Istiqomah Mosque</h1>
+          <p data-aos="fade-down" class="mb-[1.5em] text-sm text-white">
             Media Da'wah of Al Istiqomah Mosque Purbalingga<br />
             <q>Spread the Light of Knowledge, Calm the Soul</q>
           </p>
-          <button class="bg-lightGreen text-darkGreen border-2 border-lightGreen rounded-full px-6 py-1 font-bold hover:bg-darkGreen hover:text-lightGreen tracking-widest">DONATE</button>
+          <button data-aos="zoom-in" class="bg-lightGreen border-2 border-lightGreen rounded-full px-6 py-1 font-bold hover:bg-darkGreen hover:text-lightGreen shadow-xl tracking-widest text-darkGreen text-sm">DONATE</button>
         </div>
         <img src="img/mosque.jpg" alt="Background Image of Mosque" class="absolute inset-0 w-full h-full object-cover z-[-1]" />
       </header>
@@ -53,66 +57,66 @@
       <main>
         <!-- Prayer Schedule -->
         <section class="py-14 px-4">
-          <div class="text-center">
-            <h2 class="text-darkGreen mb-[1em]">Prayer Schedule</h2>
+          <div data-aos="fade-down" class="text-center">
+            <h2 class="mb-[1em] text-darkGreen">Prayer Schedule</h2>
           </div>
           <div class="text-center text-gray">
             <address class="mb-[1em]">
-              <div class="px-4">Purbalingga City and surrounding areas</div>
-              <time datetime="2025-05-07">Wednesday, May 7, 2025 | 9 Dhul Qadah 1446 AH</time>
+              <div data-aos="fade-down" class="px-4">Purbalingga City and surrounding areas</div>
+              <time datetime="2025-05-07"><span data-aos="fade-down">Wednesday, May 7, 2025 | 9 Dhul Qadah 1446 AH</span></time>
             </address>
           </div>
           <div class="flex flex-wrap justify-center items-stretch gap-6">
-            <article class="bg-paleGreen rounded-lg p-6 flex flex-col items-center shadow-lg">
+            <article data-aos="zoom-in" class="bg-paleGreen rounded-lg p-6 flex flex-col items-center shadow-lg">
               <div class="ikon-cuaca">
                 <img src="img/icon_imsyak.png" alt="Imsyak Icon" />
               </div>
               <div>Imsyak</div>
               <time>04:24</time>
             </article>
-            <article class="bg-paleGreen rounded-lg p-6 flex flex-col items-center shadow-lg">
+            <article data-aos="zoom-in" class="bg-paleGreen rounded-lg p-6 flex flex-col items-center shadow-lg">
               <div class="ikon-cuaca">
                 <img src="img/icon_subuh.png" alt="Subuh Icon" />
               </div>
               <div>Shubuh</div>
               <time>04:34</time>
             </article>
-            <article class="bg-paleGreen rounded-lg p-6 flex flex-col items-center shadow-lg">
+            <article data-aos="zoom-in" class="bg-paleGreen rounded-lg p-6 flex flex-col items-center shadow-lg">
               <div class="ikon-cuaca">
                 <img src="img/icon_syuruq.png" alt="Syuruq Icon" />
               </div>
               <div>Syuruq</div>
               <time>05:54</time>
             </article>
-            <article class="bg-paleGreen rounded-lg p-6 flex flex-col items-center shadow-lg">
+            <article data-aos="zoom-in" class="bg-paleGreen rounded-lg p-6 flex flex-col items-center shadow-lg">
               <div class="ikon-cuaca">
                 <img src="img/icon_dhuha.png" alt="Dhuha Icon" />
               </div>
               <div>Dhuha</div>
               <time>06:18</time>
             </article>
-            <article class="bg-paleGreen rounded-lg p-6 flex flex-col items-center shadow-lg">
+            <article data-aos="zoom-in" class="bg-paleGreen rounded-lg p-6 flex flex-col items-center shadow-lg">
               <div class="ikon-cuaca">
                 <img src="img/icon_dzuhur.png" alt="Zuhur Icon" />
               </div>
               <div>Dzuhur</div>
               <time>11:49</time>
             </article>
-            <article class="bg-paleGreen rounded-lg p-6 flex flex-col items-center shadow-lg">
+            <article data-aos="zoom-in" class="bg-paleGreen rounded-lg p-6 flex flex-col items-center shadow-lg">
               <div class="ikon-cuaca">
                 <img src="img/icon_ashar.png" alt="Asar Icon" />
               </div>
               <div>Ashar</div>
               <time>15:10</time>
             </article>
-            <article class="bg-paleGreen rounded-lg p-6 flex flex-col items-center shadow-lg">
+            <article data-aos="zoom-in" class="bg-paleGreen rounded-lg p-6 flex flex-col items-center shadow-lg">
               <div class="ikon-cuaca">
                 <img src="img/icon_maghrib.png" alt="Maghrib Icon" />
               </div>
               <div>Maghrib</div>
               <time>17:40</time>
             </article>
-            <article class="bg-paleGreen rounded-lg p-6 flex flex-col items-center shadow-lg">
+            <article data-aos="zoom-in" class="bg-paleGreen rounded-lg p-6 flex flex-col items-center shadow-lg">
               <div class="ikon-cuaca">
                 <img src="img/icon_isya.png" alt="Isya Icon" />
               </div>
@@ -124,26 +128,26 @@
         <!-- Financial Report -->
         <section class="py-14 px-4 bg-darkGreen text-white">
           <div class="text-center">
-            <h2 class="text-lightGreen mb-[1em]">Financial Report</h2>
+            <h2 data-aos="fade-down" class="mb-[1em] text-lightGreen">Financial Report</h2>
             <p class="mb-[1em]">
-              <span class="label">Total Funds Collected:</span><br />
-              <span class="price font-bold text-2xl inline-block mb-[1em]">Rp61.7400.00,-</span>
+              <span data-aos="zoom-in" class="label">Total Funds Collected:</span><br />
+              <span data-aos="fade-down" class="price font-bold text-2xl inline-block mb-[1em]">Rp61.7400.00,-</span>
             </p>
           </div>
           <div class="flex flex-wrap justify-center items-stretch gap-6">
-            <article class="bg-white text-gray rounded-lg p-6 flex flex-col justify-between">
+            <article data-aos="zoom-in" class="bg-white text-gray rounded-lg p-6 flex flex-col justify-between">
               <div>
                 <span class="label">Total Daily Donations</span><br />
                 <span class="price font-bold text-darkGreen">Rp14.500,-</span>
               </div>
             </article>
-            <article class="bg-white text-gray rounded-lg p-6 flex flex-col justify-between">
+            <article data-aos="zoom-in" class="bg-white text-gray rounded-lg p-6 flex flex-col justify-between">
               <div>
                 <span class="label">Total Weekly Donations</span><br />
                 <span class="price font-bold text-darkGreen">Rp101.500,-</span>
               </div>
             </article>
-            <article class="bg-white text-gray rounded-lg p-6 flex flex-col justify-between">
+            <article data-aos="zoom-in" class="bg-white text-gray rounded-lg p-6 flex flex-col justify-between">
               <div>
                 <span class="label">Total Monthly Donations</span><br />
                 <span class="price font-bold text-darkGreen">Rp3.045.000,-</span>
@@ -154,40 +158,40 @@
         <!-- Activity Schedule -->
         <section class="py-14 px-4 bg-paleGreen">
           <div class="text-center">
-            <h2 class="text-darkGreen mb-[1em]">Activity Schedule</h2>
+            <h2 data-aos="fade-down" class="mb-[1em] text-darkGreen">Activity Schedule</h2>
           </div>
           <nav class="mb-8">
             <ul class="flex justify-center gap-4 overflow-x-auto">
-              <li><a href="#" class="whitespace-nowrap text-gray">Friday Prayer Preacher</a></li>
-              <li><a href="#" class="whitespace-nowrap text-gray">Syuruq Study</a></li>
-              <li><a href="#" class="whitespace-nowrap text-gray active">Post-Maghrib Study</a></li>
-              <li><a href="#" class="whitespace-nowrap text-gray">Kultum Schedule</a></li>
-              <li><a href="#" class="whitespace-nowrap text-gray">Blessed Friday</a></li>
+              <li data-aos="zoom-in"><a href="#" class="whitespace-nowrap text-gray hover:underline">Friday Prayer Preacher</a></li>
+              <li data-aos="zoom-in"><a href="#" class="whitespace-nowrap text-gray hover:underline">Syuruq Study</a></li>
+              <li data-aos="zoom-in"><a href="#" class="whitespace-nowrap text-gray hover:underline">Post-Maghrib Study</a></li>
+              <li data-aos="zoom-in"><a href="#" class="whitespace-nowrap text-gray hover:underline">Kultum Schedule</a></li>
+              <li data-aos="zoom-in"><a href="#" class="whitespace-nowrap text-gray hover:underline">Blessed Friday</a></li>
             </ul>
           </nav>
           <div class="flex flex-wrap justify-center items-center gap-6">
-            <article class="bg-white text-gray w-72 rounded-xl border-2 border-gray-300 shadow-lg p-6 flex flex-col">
+            <article data-aos="zoom-in" class="bg-white text-gray w-72 rounded-xl border-2 border-gray-300 shadow-lg p-6 flex flex-col">
               <time datetime="2023-07-07" class="text-center">July 7, 2023</time>
               <div class="ustadz-name text-darkGreen text-center">Ustadz Abu Ukasyah Ian, Amd Hafidzahullah</div>
               <hr class="my-2" />
               <div>Theme :</div>
               <div><q>Only Allah is Eternal</q></div>
             </article>
-            <article class="bg-white text-gray w-72 rounded-xl border-2 border-gray-300 shadow-lg p-6 flex flex-col">
+            <article data-aos="zoom-in" class="bg-white text-gray w-72 rounded-xl border-2 border-gray-300 shadow-lg p-6 flex flex-col">
               <time datetime="2023-07-14" class="text-center">July 14, 2023</time>
               <div class="ustadz-name text-darkGreen text-center">Ustadz Wahyu Nur Hidayat Hafidzahullah</div>
               <hr class="my-2" />
               <div>Theme :</div>
               <div><q>Steadfast in Islam</q></div>
             </article>
-            <article class="bg-white text-gray w-72 rounded-xl border-2 border-gray-300 shadow-lg p-6 flex flex-col">
+            <article data-aos="zoom-in" class="bg-white text-gray w-72 rounded-xl border-2 border-gray-300 shadow-lg p-6 flex flex-col">
               <time datetime="2023-07-21" class="text-center">July 21, 2023</time>
               <div class="ustadz-name text-darkGreen text-center">Ustadz Ahmad Fauzan S.Si Hafidzahullah</div>
               <hr class="my-2" />
               <div>Theme :</div>
               <div><q>Islam is beautiful</q></div>
             </article>
-            <article class="bg-white text-gray w-72 rounded-xl border-2 border-gray-300 shadow-lg p-6 flex flex-col">
+            <article data-aos="zoom-in" class="bg-white text-gray w-72 rounded-xl border-2 border-gray-300 shadow-lg p-6 flex flex-col">
               <time datetime="2023-02-07" class="text-center">February 7, 2023</time>
               <div class="ustadz-name text-darkGreen text-center">Ustadz Agung Hidayat Sehfuloh Hafizhahullah</div>
               <hr class="my-2" />
@@ -196,15 +200,16 @@
             </article>
           </div>
         </section>
+        <!-- Lentera Istiqomah -->
         <section class="py-14 px-6">
-          <div class="flex justify-between items-center mb-8">
+          <div class="mb-8 flex justify-between items-center">
             <div class="flex items-center gap-4">
-              <img src="img/icon_video.png" alt="video icon" class="scale-75" />
-              <h2 class="text-darkGreen">Lentera Istiqomah</h2>
+              <img data-aos="zoom-in" src="img/icon_video.png" alt="video icon" class="scale-75" />
+              <h2 data-aos="fade-right" class="text-darkGreen">Lentera Istiqomah</h2>
             </div>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <article class="bg-white rounded-xl border-2 border-gray-300 p-6 flex flex-col shadow-lg space-y-4">
+            <article data-aos="zoom-in" class="bg-white rounded-xl border-2 border-gray-300 p-6 flex flex-col shadow-lg space-y-4">
               <div class="thumbnail">
                 <img src="img/thumbnail.png" alt="Thumbnail" class="w-full rounded-lg" />
               </div>
@@ -212,7 +217,7 @@
               <div class="description text-gray">Lessons on the basic concepts and benefits of Tasawuf and how to implement it...</div>
               <a href="#" class="btn bg-lightGreen text-center inline-block text-darkGreen rounded-full px-6 py-3 font-bold mt-auto hover:bg-darkGreen hover:text-lightGreen">Read More</a>
             </article>
-            <article class="bg-white rounded-xl border-2 border-gray-300 p-6 flex flex-col shadow-lg space-y-4">
+            <article data-aos="zoom-in" class="bg-white rounded-xl border-2 border-gray-300 p-6 flex flex-col shadow-lg space-y-4">
               <div class="thumbnail">
                 <img src="img/thumbnail.png" alt="Thumbnail" class="w-full rounded-lg" />
               </div>
@@ -220,7 +225,7 @@
               <div class="description text-gray">Explore the deep meaning and importance of prayer and get practical guidelines for...</div>
               <a href="#" class="btn bg-lightGreen text-center inline-block text-darkGreen rounded-full px-6 py-3 font-bold mt-auto hover:bg-darkGreen hover:text-lightGreen">Read More</a>
             </article>
-            <article class="bg-white rounded-xl border-2 border-gray-300 p-6 flex flex-col shadow-lg space-y-4">
+            <article data-aos="zoom-in" class="bg-white rounded-xl border-2 border-gray-300 p-6 flex flex-col shadow-lg space-y-4">
               <div class="thumbnail">
                 <img src="img/thumbnail.png" alt="Thumbnail" class="w-full rounded-lg" />
               </div>
@@ -231,14 +236,14 @@
           </div>
         </section>
         <section class="py-14 px-4">
-          <div class="flex justify-between items-center mb-8">
+          <div class="mb-8 flex justify-between items-center">
             <div class="flex items-center gap-4">
-              <img src="img/icon_video.png" alt="Article Icon" class="scale-75" />
-              <h2 class="text-darkGreen">Articles</h2>
+              <img data-aos="zoom-in" src="img/icon_video.png" alt="Article Icon" class="scale-75" />
+              <h2 data-aos="fade-right" class="text-darkGreen">Articles</h2>
             </div>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <article class="bg-white rounded-xl border-2 border-gray-300 p-6 flex flex-col shadow-lg space-y-4">
+            <article data-aos="zoom-in" class="bg-white rounded-xl border-2 border-gray-300 p-6 flex flex-col shadow-lg space-y-4">
               <div class="thumbnail">
                 <img src="img/thumbnail.png" alt="Thumbnail" class="w-full rounded-lg" />
               </div>
@@ -246,7 +251,7 @@
               <div class="description text-gray">Lessons on the basic concepts and benefits of Tasawuf and how to implement it...</div>
               <a href="#" class="btn bg-lightGreen text-darkGreen text-center inline-block rounded-full px-6 py-3 font-bold mt-auto hover:bg-darkGreen hover:text-lightGreen">Read More</a>
             </article>
-            <article class="bg-white rounded-xl border-2 border-gray-300 p-6 flex flex-col shadow-lg space-y-4">
+            <article data-aos="zoom-in" class="bg-white rounded-xl border-2 border-gray-300 p-6 flex flex-col shadow-lg space-y-4">
               <div class="thumbnail">
                 <img src="img/thumbnail.png" alt="Thumbnail" class="w-full rounded-lg" />
               </div>
@@ -254,7 +259,7 @@
               <div class="description text-gray">Explore the deep meaning and importance of prayer and get practical guidelines for...</div>
               <a href="#" class="btn bg-lightGreen text-darkGreen text-center inline-block rounded-full px-6 py-3 font-bold mt-auto hover:bg-darkGreen hover:text-lightGreen">Read More</a>
             </article>
-            <article class="bg-white rounded-xl border-2 border-gray-300 p-6 flex flex-col shadow-lg space-y-4">
+            <article data-aos="zoom-in" class="bg-white rounded-xl border-2 border-gray-300 p-6 flex flex-col shadow-lg space-y-4">
               <div class="thumbnail">
                 <img src="img/thumbnail.png" alt="Thumbnail" class="w-full rounded-lg" />
               </div>
@@ -276,11 +281,11 @@
             <div class="footer-section">
               <h3 class="text-lightGreen">Quick Links</h3>
               <ul class="list-none flex gap-2">
-                <li><a href="#" class="text-white w-full text-sm">Profile</a></li>
-                <li><a href="#" class="text-white w-full text-sm">Finance</a></li>
-                <li><a href="#" class="text-white w-full text-sm">Activities</a></li>
-                <li><a href="#" class="text-white w-full text-sm">Services</a></li>
-                <li><a href="#" class="text-white w-full text-sm">Store</a></li>
+                <li><a href="#" class="text-white w-full text-sm hover:underline">Profile</a></li>
+                <li><a href="#" class="text-white w-full text-sm hover:underline">Finance</a></li>
+                <li><a href="#" class="text-white w-full text-sm hover:underline">Activities</a></li>
+                <li><a href="#" class="text-white w-full text-sm hover:underline">Services</a></li>
+                <li><a href="#" class="text-white w-full text-sm hover:underline">Store</a></li>
               </ul>
             </div>
             <div class="footer-section">
@@ -295,7 +300,11 @@
         </footer>
       </main>
     </div>
-    <script src="js/index.js"></script>
+    <!-- AOS Import & Init -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
+    <script>
+      AOS.init({ duraton: 1500 });
+    </script>
     <script>
       document.querySelectorAll('a[href="#"]').forEach(a => a.addEventListener('click', e => e.preventDefault()));
       function toggleMobileNav() {
