@@ -1,24 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Merriweather:wght@700&display=swap");
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(100, 100, 100, 0.3);
-  border-radius: 9999px;
-  -webkit-border-radius: 9999px;
-  -moz-border-radius: 9999px;
-  -ms-border-radius: 9999px;
-  -o-border-radius: 9999px;
-  border: 2px solid transparent;
-  background-clip: content-box;
-}
-
 body {
   font-family: "Inter", sans-serif;
 }
@@ -38,7 +19,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.25rem; /* Consider increasing for better readability if needed */
+  font-size: 1.25rem;
 }
 
 .mobile-nav-toggle {
