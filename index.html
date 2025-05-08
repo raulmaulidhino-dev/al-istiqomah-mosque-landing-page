@@ -306,6 +306,7 @@
       AOS.init({ duraton: 1500 });
     </script>
     <script>
+      document.querySelectorAll('a[href="#"]').forEach(a => a.addEventListener('click', e => e.preventDefault()));
       function toggleMobileNav() {
         const nav = document.getElementById('primary-navigation');
         nav.classList.toggle('-translate-x-full');
